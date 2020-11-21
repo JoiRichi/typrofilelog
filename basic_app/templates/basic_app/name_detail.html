@@ -1,0 +1,25 @@
+{% extends 'basic_app/base.html' %}
+
+{% block content %}
+
+<h1>{{name.name}}'s profile</h1>
+
+<div class="jumbotron">
+
+	{% for dets in name.identity.all %}
+		<p><h1>Location: {{dets.location}}</h1></p>
+		<p><h1>Age: {{dets.age}}</h1></p>
+		<p><h1>About: {{dets.text_field}}</h1></p>
+	{% endfor %}
+	
+	
+
+
+		
+
+</div>
+
+<a class="btn btn-primary" href="{% url 'basic_app:list' %}">Back</a>
+
+
+{% endblock content %}
