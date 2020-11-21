@@ -5,7 +5,7 @@
 <div class="jumbotron">
 	
 	<ol>
-		{% for names in name_list %}
+		{% for names in profile_list %}
 			<h1><li><a href="{% url 'basic_app:detail' names.id %}">{{names.name}}</a></li></h1>
 		{% endfor %}
 	</ol>

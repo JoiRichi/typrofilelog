@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from basic_app.models import Name, Profile
-from django.views.generic import TemplateView, ListView, DetailView 
+from basic_app.models import Profile
+from django.views.generic import TemplateView, ListView, DetailView, UpdateView, CreateView 
 
 
 # Create your views here.
@@ -9,7 +9,17 @@ class IndexView(TemplateView):
 
 
 class NameListView(ListView):
-	model = Name
+	model = Profile
 
 class ProfileDetail(DetailView):
-	model = Name
+	model = Profile
+
+class ProfileCreateView(CreateView):
+	template_name = 'basic_app/name_form.html'
+	model = Profile
+	fields = '__all__'
+
+class profileUpdateView(UpdateView):
+	template_name = 'basic_app/name_form.html'
+	model = Profile
+	fields = '__all__'
