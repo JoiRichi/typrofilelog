@@ -18,7 +18,16 @@
 
 </div>
 
-<a class="btn btn-primary btn-lg" href="{% url 'basic_app:list' %}">Back</a>
+<p>
+	<a class="btn btn-warning btn-lg" href="{% url 'basic_app:update' profile.id %}">Edit</a>
+</p>
 
+<p>
+	<a class="btn btn-danger btn-lg" href="{% url 'basic_app:delete' profile.id %}">Delete</a>
+</p>
+
+<p>
+	<a class="btn btn-primary btn-lg" href="{% url 'basic_app:list' %}">Back</a>
+</p>
 
 {% endblock content %}

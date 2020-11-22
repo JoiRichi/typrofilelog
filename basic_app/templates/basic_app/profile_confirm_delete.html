@@ -1,0 +1,20 @@
+{% extends 'basic_app/base.html' %}
+
+
+
+{% block content %}
+
+<div class="container jumbotron">
+
+<h1>Are you sure you want to delete {{profile_delete.name}}'s Profile</h1>
+
+<form method="POST">
+	{% csrf_token %}
+	<p><input class="btn btn-danger" type="submit" value="Confirm"></p>
+	<p><a class="btn btn-warning" href="{% url 'basic_app:detail' profile_delete.id %}">Cancel</a></p>
+</form>
+
+
+</div>
+
+{% endblock content %}
